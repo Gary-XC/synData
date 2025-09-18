@@ -1,0 +1,47 @@
+🚦 Workflow per dataset/table
+
+Bring in new dataset (e.g. customers.csv)
+
+Preprocess it with TabularPreprocessor (learn scaling + one-hot layout).
+
+Train a GAN generator + discriminator until results are good.
+
+Save artifacts once
+
+preproc.joblib → remembers how to transform raw rows into the GAN’s feature space.
+
+gan_best.pth → generator weights matched to that exact feature count.
+
+Reuse forever (as long as schema is stable)
+
+Load gan_best.pth + preproc.joblib.
+
+Sample as many synthetic rows as you need (daily, hourly, etc.).
+
+No retraining required.
+
+Retrain only when necessary
+
+Schema changes (new columns, new categories, or dropped fields).
+
+Data drift: distributions in the real data shift too far from what the model was trained on.
+
+Scheduled refresh (e.g. weekly/monthly) if you want models to always reflect the most recent reality.
+
+🔒 Why one model per dataset/schema
+
+The generator’s output dimension is fixed to the number of processed features.
+
+If the dataset has a different schema (32 vs 45 vs 100 features), you need a different generator trained for that.
+
+So yes: each new dataset/table (with its own schema) gets trained once, saved, and reused.
+
+🛠️ In practice
+
+Customers → train once → outputs/customers/ has gan_best.pth + preproc.joblib.
+
+Accounts → train once → outputs/accounts/…
+
+Transactions → train once → outputs/transactions/…
+
+Then your daily synthetic job just picks the right folder, loads that pair of files, and generates/upload rows — no retraining.
