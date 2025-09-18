@@ -1,2 +1,3 @@
 .venv
-.vscodeInitial-Model/data/creditcard.csv
+Initial-Model/data/creditcard.csv
+.vscode
