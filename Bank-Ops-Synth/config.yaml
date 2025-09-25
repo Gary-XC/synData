@@ -10,6 +10,11 @@ noise_std_start: 0.05
 noise_std_end: 0.0
 noise_decay_epochs: 30
 
+selection:
+  scope: canada            # canada | province | metro
+  provinces: [ON, BC]      # used if scope=province
+  metros: [GTA]            # used if scope=metro
+
 tables:
   - name: customers
     path: data/customers.csv

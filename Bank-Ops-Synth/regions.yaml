@@ -1,0 +1,36 @@
+canada:
+  provinces:
+    AB: {name: Alberta}
+    BC: {name: British Columbia}
+    MB: {name: Manitoba}
+    NB: {name: New Brunswick}
+    NL: {name: Newfoundland and Labrador}
+    NS: {name: Nova Scotia}
+    NT: {name: Northwest Territories}
+    NU: {name: Nunavut}
+    ON: {name: Ontario}
+    PE: {name: Prince Edward Island}
+    QC: {name: Quebec}
+    SK: {name: Saskatchewan}
+    YT: {name: Yukon}
+
+  metros:
+    GTA:
+      province: ON
+      municipalities:
+        - Toronto
+        - Mississauga
+        - Brampton
+        - Markham
+        - Vaughan
+        - Richmond Hill
+        - Oakville
+        - Burlington
+        - Pickering
+        - Ajax
+        - Whitby
+        - Oshawa
+        - Milton
+        - Halton Hills
+        - Newmarket
+        - Aurora
