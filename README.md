@@ -27,6 +27,7 @@ Database Integration
 1. Clone the Repository
   - git clone <repo-url>
   - cd <repo-name>
+  - Create a venv and download libraries from the requirements.txt
 
 2. Prepare Your Dataset
   - Place your bank loan dataset in CSV format inside the project directory.
