@@ -79,3 +79,6 @@ Database –-> PostgreSQL
   - Working with TGAN's
   - Database Management
     
+**Data Sets**
+- https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+- https://www.kaggle.com/datasets/nikhil1e9/loan-default
